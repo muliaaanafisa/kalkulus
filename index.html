@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Modul pembelajaran interaktif untuk memahami konsep limit fungsi dalam Kalkulus.">
+  <title>Modul Limit Fungsi — Universitas Teknokrat Indonesia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#beranda" aria-label="Modul Limit Fungsi, beranda">
+        <span class="brand-mark"><i class="fa-solid fa-infinity"></i></span>
+        <span class="brand-copy">
+          <strong>TEKNOKRAT<span class="brand-dot">.</span></strong>
+          <small>FAKULTAS TEKNIK &amp; ILMU KOMPUTER</small>
+        </span>
+      </a>
+      <div class="header-label"><span class="live-dot"></span> MODUL PEMBELAJARAN KALKULUS</div>
+      <a class="header-link" href="#materi" data-tab-link="intuisi">Mulai belajar <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </header>
+
+  <main id="beranda">
+    <section class="hero page-width">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>MODUL 01</span><span class="eyebrow-line"></span><span>KALKULUS DASAR</span></div>
+        <h1>Memahami <span>Limit</span><br>Fungsi, Selangkah<br>demi Selangkah.</h1>
+        <p>Jelajahi ide di balik limit melalui visualisasi, contoh terarah, dan latihan interaktif. Belajar konsepnya, bukan sekadar menghafal rumus.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#materi" data-tab-link="intuisi">Jelajahi materi <i class="fa-solid fa-arrow-down"></i></a>
+          <span class="hero-meta"><i class="fa-regular fa-clock"></i> 15 menit belajar</span>
+        </div>
+        <div class="hero-footnote"><span class="hero-footnote-icon"><i class="fa-solid fa-lightbulb"></i></span> Mulai dari intuisi, lanjutkan ke definisi formal.</div>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi kurva yang mendekati suatu nilai limit">
+        <div class="art-topline"><span>VISUALISASI KONSEP</span><span><i class="fa-solid fa-circle"></i> LIVE</span></div>
+        <div class="art-equation">lim <span class="art-under">x → c</span> f(x) = L</div>
+        <svg class="limit-illustration" viewBox="0 0 540 330" role="img" aria-label="Kurva mendekati titik limit L">
+          <defs>
+            <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+              <path d="M 34 0 L 0 0 0 34" fill="none" stroke="#e7ebf3" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="540" height="330" rx="12" fill="url(#grid)"/>
+          <line x1="60" y1="257" x2="500" y2="257" stroke="#aab3c4" stroke-width="1.5"/>
+          <line x1="270" y1="25" x2="270" y2="296" stroke="#aab3c4" stroke-width="1.5"/>
+          <line x1="330" y1="47" x2="330" y2="257" stroke="#b9a7ff" stroke-width="1.5" stroke-dasharray="5 6"/>
+          <line x1="60" y1="121" x2="500" y2="121" stroke="#b9a7ff" stroke-width="1.5" stroke-dasharray="5 6"/>
+          <path d="M72 228 C145 216 194 187 234 147 C268 113 296 102 329 101 C379 99 424 73 482 39" fill="none" stroke="#7355e8" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="330" cy="101" r="7" fill="#fff" stroke="#7355e8" stroke-width="3"/>
+          <circle cx="330" cy="101" r="15" fill="none" stroke="#7355e8" stroke-opacity=".15" stroke-width="7"/>
+          <text x="338" y="282" fill="#7355e8" font-size="16" font-weight="700">c</text>
+          <text x="284" y="114" fill="#7355e8" font-size="16" font-weight="700">L</text>
+          <text x="21" y="126" fill="#9099aa" font-size="13">f(x)</text>
+          <text x="493" y="280" fill="#9099aa" font-size="13">x</text>
+          <text x="344" y="83" fill="#81899a" font-size="11">titik yang dituju</text>
+        </svg>
+        <div class="art-caption"><span class="caption-marker"></span> Nilai yang didekati, bukan selalu nilai yang dicapai.</div>
+        <div class="art-index">01 / 05</div>
+      </div>
+      <div class="hero-decoration decoration-one"></div>
+      <div class="hero-decoration decoration-two"></div>
+    </section>
+
+    <section class="learning-shell page-width" id="materi">
+      <aside class="learning-sidebar" aria-label="Daftar modul">
+        <div class="sidebar-heading">JALUR BELAJAR <span>5 MODUL</span></div>
+        <nav class="tab-nav" role="tablist" aria-label="Modul pembelajaran limit">
+          <button class="tab-button active" id="tab-intuisi" role="tab" aria-selected="true" aria-controls="panel-intuisi" data-tab="intuisi">
+            <span class="tab-number">01</span><span class="tab-icon"><i class="fa-solid fa-chart-line"></i></span><span class="tab-text"><strong>Intuisi &amp; Grafik</strong><small>Memahami pendekatan</small></span><i class="fa-solid fa-chevron-right tab-arrow"></i>
+          </button>
+          <button class="tab-button" id="tab-presisi" role="tab" aria-selected="false" aria-controls="panel-presisi" data-tab="presisi" tabindex="-1">
+            <span class="tab-number">02</span><span class="tab-icon"><i class="fa-solid fa-bullseye"></i></span><span class="tab-text"><strong>Definisi Presisi</strong><small>Konsep ε dan δ</small></span><i class="fa-solid fa-chevron-right tab-arrow"></i>
+          </button>
+          <button class="tab-button" id="tab-teorema" role="tab" aria-selected="false" aria-controls="panel-teorema" data-tab="teorema" tabindex="-1">
+            <span class="tab-number">03</span><span class="tab-icon"><i class="fa-solid fa-shapes"></i></span><span class="tab-text"><strong>Teorema Limit</strong><small>Aturan dasar</small></span><i class="fa-solid fa-chevron-right tab-arrow"></i>
+          </button>
+          <button class="tab-button" id="tab-metode" role="tab" aria-selected="false" aria-controls="panel-metode" data-tab="metode" tabindex="-1">
+            <span class="tab-number">04</span><span class="tab-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="tab-text"><strong>Metode &amp; Contoh</strong><small>Strategi penyelesaian</small></span><i class="fa-solid fa-chevron-right tab-arrow"></i>
+          </button>
+          <button class="tab-button" id="tab-kuis" role="tab" aria-selected="false" aria-controls="panel-kuis" data-tab="kuis" tabindex="-1">
+            <span class="tab-number">05</span><span class="tab-icon"><i class="fa-solid fa-pen-to-square"></i></span><span class="tab-text"><strong>Kuis Interaktif</strong><small>Uji pemahamanmu</small></span><i class="fa-solid fa-chevron-right tab-arrow"></i>
+          </button>
+        </nav>
+        <div class="sidebar-note"><i class="fa-solid fa-graduation-cap"></i><p><strong>Belajar dengan ritmemu.</strong><br>Setiap modul bisa dibuka kapan saja.</p></div>
+      </aside>
+
+      <div class="lesson-content">
+        <section class="tab-panel active" id="panel-intuisi" role="tabpanel" aria-labelledby="tab-intuisi" tabindex="0">
+          <div class="section-kicker">MODUL 01 <span>/</span> INTUISI &amp; GRAFIK</div>
+          <div class="section-title-row"><div><h2>Limit adalah tentang <em>mendekati.</em></h2><p class="section-intro">Kita ingin tahu ke mana nilai fungsi bergerak saat x semakin dekat ke suatu titik.</p></div><span class="section-stamp"><i class="fa-solid fa-chart-simple"></i> EKSPLORASI</span></div>
+          <div class="concept-card">
+            <div class="concept-icon"><i class="fa-solid fa-compass"></i></div>
+            <div><div class="card-label">GAGASAN UTAMA</div><p>Limit <strong>tidak selalu menanyakan nilai fungsi tepat di titik tersebut.</strong> Kita mengamati nilai fungsi saat x bergerak mendekati titik dari kiri dan kanan.</p></div>
+          </div>
+          <div class="subsection-heading"><div><span class="step-badge">A</span><h3>Lihat dari dua arah</h3></div><span class="subsection-note">f(x) = (x² − 1) / (x − 1)</span></div>
+          <div class="table-wrap">
+            <table class="approach-table">
+              <thead><tr><th>Arah pendekatan</th><th>Nilai x</th><th>Nilai f(x)</th><th>Semakin dekat ke</th></tr></thead>
+              <tbody>
+                <tr><td><span class="direction-pill left"><i class="fa-solid fa-arrow-left"></i> Dari kiri</span></td><td>0.9</td><td>1.9</td><td>2</td></tr>
+                <tr><td><span class="direction-pill left"><i class="fa-solid fa-arrow-left"></i> Dari kiri</span></td><td>0.99</td><td>1.99</td><td>2</td></tr>
+                <tr><td><span class="direction-pill right"><i class="fa-solid fa-arrow-right"></i> Dari kanan</span></td><td>1.01</td><td>2.01</td><td>2</td></tr>
+                <tr><td><span class="direction-pill right"><i class="fa-solid fa-arrow-right"></i> Dari kanan</span></td><td>1.1</td><td>2.1</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="insight-line"><i class="fa-solid fa-circle-info"></i><span>Saat x ≠ 1, bentuk tersebut dapat disederhanakan menjadi <span class="math-inline">f(x) = x + 1</span>. Jadi, limitnya adalah 2 meskipun f(1) tidak terdefinisi.</span></div>
+          <div class="subsection-heading simulator-heading"><div><span class="step-badge">B</span><h3>Coba sendiri</h3></div><span class="subsection-note">Geser x dan amati hasilnya</span></div>
+          <div class="simulator-card">
+            <div class="simulator-controls">
+              <label class="field-label" for="function-select">PILIH FUNGSI</label>
+              <select id="function-select">
+                <option value="rational">f(x) = (x² − 1) / (x − 1)</option>
+                <option value="piecewise">Fungsi potongan di x = 1</option>
+              </select>
+              <label class="field-label slider-label" for="x-slider">NILAI x <output id="x-value" for="x-slider">1.50</output></label>
+              <input id="x-slider" type="range" min="-1" max="3" step="0.01" value="1.5">
+              <div class="range-labels"><span>−1</span><span>mendekati 1</span><span>3</span></div>
+            </div>
+            <div class="simulator-result">
+              <div class="result-label">HASIL EVALUASI</div><div class="result-equation" id="simulator-equation">f(1.50) = <strong>2.50</strong></div>
+              <div class="result-status" id="simulator-status"><span class="status-dot"></span> Nilai fungsi terdefinisi</div>
+              <div class="result-analysis" id="simulator-analysis">Saat x mendekati 1 dari kedua arah, f(x) mendekati 2.</div>
+            </div>
+          </div>
+          <section class="limit-input-card" aria-labelledby="limit-input-title">
+            <div class="limit-input-heading">
+              <span class="step-badge">C</span>
+              <div>
+                <h3 id="limit-input-title">Masukkan soal limitmu</h3>
+                <p>Tulis fungsi dan titik yang ingin didekati untuk melihat pendekatan dari kiri dan kanan.</p>
+              </div>
+            </div>
+            <form id="limit-form">
+              <div class="limit-input-fields">
+                <div>
+                  <label class="field-label" for="limit-expression">FUNGSI f(x)</label>
+                  <input id="limit-expression" name="expression" type="text" value="(x^2 - 1) / (x - 1)" maxlength="120" required autocomplete="off" spellcheck="false" aria-describedby="limit-input-hint">
+                </div>
+                <div>
+                  <label class="field-label" for="limit-point">x MENDEKATI</label>
+                  <input id="limit-point" name="point" type="number" value="1" step="any" required>
+                </div>
+                <button class="button button-primary" type="submit">Hitung limit <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+              <p class="limit-input-hint" id="limit-input-hint">Gunakan x, angka, +, −, *, /, ^, tanda kurung, atau sqrt(...). Perkalian seperti 2x juga bisa ditulis. Contoh: (x^2 - 1) / (x - 1).</p>
+            </form>
+            <div class="limit-result" id="limit-result" aria-live="polite" hidden></div>
+          </section>
+          <div class="lesson-next"><span><i class="fa-solid fa-arrow-turn-down"></i> Siap untuk definisi yang lebih presisi?</span><button class="text-button" data-tab-link="presisi">Lanjut ke Modul 02 <i class="fa-solid fa-arrow-right"></i></button></div>
+        </section>
+
+        <section class="tab-panel" id="panel-presisi" role="tabpanel" aria-labelledby="tab-presisi" tabindex="0" hidden>
+          <div class="section-kicker">MODUL 02 <span>/</span> DEFINISI PRESISI</div>
+          <div class="section-title-row"><div><h2>Seberapa dekat itu <em>dekat?</em></h2><p class="section-intro">Definisi epsilon-delta mengubah intuisi limit menjadi pernyataan yang dapat dibuktikan.</p></div><span class="section-stamp"><i class="fa-solid fa-bullseye"></i> VISUALISASI</span></div>
+          <div class="definition-card">
+            <div class="definition-label"><span class="definition-symbol">ε</span> DEFINISI FORMAL</div>
+            <p>Limit <span class="math-inline">\lim_{x \to c} f(x) = L</span> berarti: untuk setiap <span class="math-inline">\varepsilon &gt; 0</span>, terdapat <span class="math-inline">\delta &gt; 0</span> sehingga jika <span class="math-inline">0 &lt; |x-c| &lt; \delta</span>, maka <span class="math-inline">|f(x)-L| &lt; \varepsilon</span>.</p>
+            <div class="definition-translation"><i class="fa-solid fa-language"></i><span>Dengan kata lain: kita bisa membuat f(x) sedekat apa pun ke L dengan memilih x cukup dekat ke c.</span></div>
+          </div>
+          <div class="subsection-heading"><div><span class="step-badge">A</span><h3>Atur toleransinya</h3></div><span class="subsection-note">f(x) = 3x − 7, di sekitar x = 3</span></div>
+          <div class="epsilon-card">
+            <div class="epsilon-controls">
+              <div class="epsilon-heading"><label class="field-label" for="epsilon-slider">TOLERANSI ε</label><output id="epsilon-value" for="epsilon-slider">0.60</output></div>
+              <input id="epsilon-slider" type="range" min="0.2" max="2" step="0.05" value="0.6">
+              <div class="range-labels"><span>0.2 (ketat)</span><span>2.0 (longgar)</span></div>
+              <div class="delta-equation"><span>Untuk fungsi ini, pilih</span><strong>δ = ε / 3 = <output id="delta-value">0.20</output></strong></div>
+              <p class="epsilon-explanation">Jika <span class="math-inline">|x − 3| &lt; δ</span>, maka <span class="math-inline">|f(x) − 2| &lt; ε</span>. Perhatikan pita intervalnya berubah saat ε digeser.</p>
+            </div>
+            <div class="canvas-wrap"><canvas id="epsilon-canvas" aria-label="Grafik f(x) sama dengan 3x dikurangi 7, dengan pita epsilon dan delta"></canvas><div class="canvas-legend"><span><i class="legend-line"></i> f(x) = 3x − 7</span><span><i class="legend-band"></i> pita ε dan δ</span></div></div>
+          </div>
+          <div class="lesson-next"><span><i class="fa-solid fa-arrow-turn-down"></i> Saat limit ada, aturan-aturan ini membantu menghitungnya.</span><button class="text-button" data-tab-link="teorema">Lanjut ke Modul 03 <i class="fa-solid fa-arrow-right"></i></button></div>
+        </section>
+
+        <section class="tab-panel" id="panel-teorema" role="tabpanel" aria-labelledby="tab-teorema" tabindex="0" hidden>
+          <div class="section-kicker">MODUL 03 <span>/</span> TEOREMA LIMIT</div>
+          <div class="section-title-row"><div><h2>Aturan yang membuatnya <em>lebih mudah.</em></h2><p class="section-intro">Jika limit-limit komponennya ada, kita dapat mengolahnya dengan aturan berikut.</p></div><span class="section-stamp"><i class="fa-solid fa-shapes"></i> 9 ATURAN</span></div>
+          <div class="theorem-grid">
+            <article class="theorem-card"><span class="theorem-number">01</span><span class="theorem-icon"><i class="fa-solid fa-hashtag"></i></span><h3>Aturan konstanta</h3><div class="theorem-formula math-display">\lim_{x \to c} k = k</div><p>Limit fungsi konstan selalu sama dengan konstanta itu sendiri.</p></article>
+            <article class="theorem-card"><span class="theorem-number">02</span><span class="theorem-icon"><i class="fa-solid fa-equals"></i></span><h3>Aturan identitas</h3><div class="theorem-formula math-display">\lim_{x \to c} x = c</div><p>Limit dari x saat x mendekati c adalah c.</p></article>
+            <article class="theorem-card"><span class="theorem-number">03</span><span class="theorem-icon"><i class="fa-solid fa-xmark"></i></span><h3>Kelipatan konstanta</h3><div class="theorem-formula math-display">\lim_{x \to c} [k f(x)] = kL</div><p>Konstanta dapat dikeluarkan dari operasi limit.</p></article>
+            <article class="theorem-card"><span class="theorem-number">04</span><span class="theorem-icon"><i class="fa-solid fa-plus-minus"></i></span><h3>Penjumlahan &amp; pengurangan</h3><div class="theorem-formula math-display">\lim_{x \to c} [f(x) \pm g(x)] = L \pm M</div><p>Limit jumlah atau selisih sama dengan jumlah atau selisih limitnya.</p></article>
+            <article class="theorem-card"><span class="theorem-number">05</span><span class="theorem-icon"><i class="fa-solid fa-asterisk"></i></span><h3>Perkalian</h3><div class="theorem-formula math-display">\lim_{x \to c} [f(x)g(x)] = LM</div><p>Limit hasil kali adalah hasil kali masing-masing limit.</p></article>
+            <article class="theorem-card"><span class="theorem-number">06</span><span class="theorem-icon"><i class="fa-solid fa-divide"></i></span><h3>Pembagian</h3><div class="theorem-formula math-display">\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}</div><p>Berlaku selama M ≠ 0.</p></article>
+            <article class="theorem-card"><span class="theorem-number">07</span><span class="theorem-icon"><i class="fa-solid fa-superscript"></i></span><h3>Aturan pangkat</h3><div class="theorem-formula math-display">\lim_{x \to c} [f(x)]^n = L^n</div><p>Limit fungsi berpangkat n adalah pangkat n dari limitnya.</p></article>
+            <article class="theorem-card"><span class="theorem-number">08</span><span class="theorem-icon"><i class="fa-solid fa-square-root-variable"></i></span><h3>Aturan akar</h3><div class="theorem-formula math-display">\lim_{x \to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</div><p>Limit dapat diterapkan pada fungsi akar jika terdefinisi.</p></article>
+            <article class="theorem-card theorem-card-featured"><span class="theorem-number">09</span><span class="theorem-icon"><i class="fa-solid fa-cubes-stacked"></i></span><h3>Komposisi fungsi</h3><div class="theorem-formula math-display">\lim_{x \to c} h(f(x)) = h(L)</div><p>Untuk fungsi h yang kontinu di L, limit komposisi mengikuti limit di dalamnya.</p></article>
+          </div>
+          <div class="lesson-next"><span><i class="fa-solid fa-arrow-turn-down"></i> Bagaimana jika substitusi langsung belum cukup?</span><button class="text-button" data-tab-link="metode">Lanjut ke Modul 04 <i class="fa-solid fa-arrow-right"></i></button></div>
+        </section>
+
+        <section class="tab-panel" id="panel-metode" role="tabpanel" aria-labelledby="tab-metode" tabindex="0" hidden>
+          <div class="section-kicker">MODUL 04 <span>/</span> METODE &amp; CONTOH</div>
+          <div class="section-title-row"><div><h2>Pilih strategi yang <em>tepat.</em></h2><p class="section-intro">Mulai dengan substitusi. Jika muncul bentuk tak tentu, sederhanakan dahulu.</p></div><span class="section-stamp"><i class="fa-solid fa-wand-magic-sparkles"></i> 3 METODE</span></div>
+          <div class="warning-card"><span class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></span><div><strong>Waspadai bentuk tak tentu</strong><p>Bentuk <span class="math-inline">\frac{0}{0}</span>, <span class="math-inline">\frac{\infty}{\infty}</span>, dan <span class="math-inline">\infty - \infty</span> belum memberi jawaban. Bentuk ini adalah petunjuk untuk menyederhanakan atau memilih metode lain.</p></div></div>
+          <div class="method-list">
+            <article class="method-card">
+              <div class="method-index">01</div><div class="method-body"><div class="method-label">METODE PALING LANGSUNG</div><h3>Substitusi langsung</h3><p>Masukkan nilai x yang didekati. Jika menghasilkan nilai terdefinisi, itulah limitnya.</p><div class="method-example math-display">\lim_{x \to 2} (x^2 + 3x - 1) = 4 + 6 - 1 = 9</div></div><button class="button button-outline solution-button" data-solution="substitusi">Lihat langkah <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+            <article class="method-card">
+              <div class="method-index">02</div><div class="method-body"><div class="method-label">JIKA BENTUKNYA 0/0</div><h3>Pemfaktoran</h3><p>Faktorkan pembilang dan penyebut, lalu sederhanakan faktor yang sama sebelum substitusi.</p><div class="method-example math-display">\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = \lim_{x \to 1} (x + 1) = 2</div></div><button class="button button-outline solution-button" data-solution="faktorisasi">Lihat langkah <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+            <article class="method-card">
+              <div class="method-index">03</div><div class="method-body"><div class="method-label">JIKA ADA BENTUK AKAR</div><h3>Perkalian sekawan</h3><p>Kalikan dengan bentuk sekawan untuk menghilangkan akar dan memperoleh bentuk yang dapat disederhanakan.</p><div class="method-example math-display">\lim_{x \to 0} \frac{\sqrt{x+4}-2}{x} = \frac{1}{\sqrt{x+4}+2} \to \frac{1}{4}</div></div><button class="button button-outline solution-button" data-solution="sekawan">Lihat langkah <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+          </div>
+          <div class="lesson-next"><span><i class="fa-solid fa-arrow-turn-down"></i> Sekarang waktunya menguji pemahamanmu.</span><button class="text-button" data-tab-link="kuis">Lanjut ke Modul 05 <i class="fa-solid fa-arrow-right"></i></button></div>
+        </section>
+
+        <section class="tab-panel" id="panel-kuis" role="tabpanel" aria-labelledby="tab-kuis" tabindex="0" hidden>
+          <div class="section-kicker">MODUL 05 <span>/</span> KUIS INTERAKTIF</div>
+          <div class="section-title-row"><div><h2>Seberapa jauh <em>pemahamanmu?</em></h2><p class="section-intro">Pilih satu jawaban untuk setiap soal, lalu periksa hasilnya.</p></div><span class="section-stamp"><i class="fa-solid fa-pen-to-square"></i> 3 SOAL</span></div>
+          <form id="quiz-form">
+            <fieldset class="quiz-question" data-question="0"><legend><span class="question-number">01</span><span>Nilai dari <span class="math-inline">\lim_{x \to 2} (3x + 1)</span> adalah …</span></legend><label class="answer-option"><input type="radio" name="q1" value="a"><span class="radio-custom"></span><span>5</span><span class="answer-feedback"></span></label><label class="answer-option"><input type="radio" name="q1" value="b"><span class="radio-custom"></span><span>7</span><span class="answer-feedback"></span></label><label class="answer-option"><input type="radio" name="q1" value="c"><span class="radio-custom"></span><span>6</span><span class="answer-feedback"></span></label><p class="question-explanation" aria-live="polite"></p></fieldset>
+            <fieldset class="quiz-question" data-question="1"><legend><span class="question-number">02</span><span>Hitung <span class="math-inline">\lim_{x \to 1} \frac{x^2 - 1}{x - 1}</span>.</span></legend><label class="answer-option"><input type="radio" name="q2" value="a"><span class="radio-custom"></span><span>0</span><span class="answer-feedback"></span></label><label class="answer-option"><input type="radio" name="q2" value="b"><span class="radio-custom"></span><span>2</span><span class="answer-feedback"></span></label><label class="answer-option"><input type="radio" name="q2" value="c"><span class="radio-custom"></span><span>Tidak terdefinisi, jadi limit tidak ada</span><span class="answer-feedback"></span></label><p class="question-explanation" aria-live="polite"></p></fieldset>
+            <fieldset class="quiz-question" data-question="2"><legend><span class="question-number">03</span><span>Jika <span class="math-inline">f(x)=3x-7</span>, pilihan δ yang sesuai untuk ε = 0.3 di sekitar x = 3 adalah …</span></legend><label class="answer-option"><input type="radio" name="q3" value="a"><span class="radio-custom"></span><span>0.9</span><span class="answer-feedback"></span></label><label class="answer-option"><input type="radio" name="q3" value="b"><span class="radio-custom"></span><span>0.1</span><span class="answer-feedback"></span></label><label class="answer-option"><input type="radio" name="q3" value="c"><span class="radio-custom"></span><span>0.3</span><span class="answer-feedback"></span></label><p class="question-explanation" aria-live="polite"></p></fieldset>
+            <div class="quiz-footer"><button class="button button-primary" type="submit">Periksa jawaban <i class="fa-solid fa-check"></i></button><button class="text-button reset-quiz" type="button" id="reset-quiz">Ulangi kuis</button><div class="quiz-score" id="quiz-score" aria-live="polite"></div></div>
+          </form>
+          <div class="completion-note"><i class="fa-solid fa-star"></i><span><strong>Bagus sudah sampai di sini!</strong> Memahami limit adalah langkah awal untuk menjelajahi kalkulus lebih jauh.</span></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="page-width footer-inner"><a class="brand footer-brand" href="#beranda"><span class="brand-mark"><i class="fa-solid fa-infinity"></i></span><span class="brand-copy"><strong>TEKNOKRAT<span class="brand-dot">.</span></strong><small>UNIVERSITAS TEKNOKRAT INDONESIA</small></span></a><span>Media pembelajaran Kalkulus · Fakultas Teknik dan Ilmu Komputer</span><span>© 2025</span></div></footer>
+
+  <dialog id="solution-dialog" class="solution-dialog">
+    <div class="dialog-top"><span class="dialog-kicker">PEMBAHASAN LANGKAH DEMI LANGKAH</span><button class="dialog-close" type="button" aria-label="Tutup pembahasan"><i class="fa-solid fa-xmark"></i></button></div>
+    <h2 id="dialog-title"></h2><div id="dialog-content"></div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
